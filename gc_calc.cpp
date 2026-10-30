@@ -1,6 +1,19 @@
-// Add length reporting before the return statement 
-cout << "Total Sequence Length: " << seq.length() << " bp" << endl; 
-Stage and commit the changes directly to feature-length: 
-git add gc_calc.cpp 
-git commit -m "feat: Add sequence length calculation" 
+#include <iostream> 
+#include <string> 
+using namespace std; 
+int main() { 
+string seq = "ATGCGATCGATCGATCGAATTCG"; 
+int gc_count = 0; 
+for (char base : seq) { 
+if (base == 'G' || base == 'C') { 
+} 
+gc_count++; 
+} 
 
+if (base != 'A' && base != 'T' && base != 'G' && base != 'C') { 
+ 
+cerr << "Warning: Non-canonical DNA character detected: " << base << endl; 
+}
+double gc_percentage = (static_cast<double> (gc_count) / seq.length()) cout << "Sequence: << seq << endl;cout << "GC Content: "<< gc_percentage << "%" << endl; 
+return 0; 
+}
